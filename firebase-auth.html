@@ -1,0 +1,32 @@
+<html>
+<head>
+	<title>Firebase Auth demo</title>
+	<script src="https://cdn.firebase.com/js/client/2.4.0/firebase.js"></script>
+	
+    <script type="riot/tag" src="firebase-auth.tag"></script>
+    <script type="text/javascript" src="riot+compiler.min.js"></script>
+    <style type="text/css">
+    	firebase-auth  {
+    		background-color: #E2EFF1;
+    		display: block;
+    		padding: 3px;
+    		position: fixed;
+    		top: 0;
+		    right: 0;
+		    z-index: 1030;
+    	}
+    </style>
+</head>
+<body>
+	<h1>Welcome</h1>
+	
+	<firebase-auth></firebase-auth>
+
+	<p>This is the authentication sample</p>
+
+	<script type="text/javascript">
+		var fb = new Firebase('https://docs-sandbox.firebaseio.com/web/uauth');
+		riot.mount('firebase-auth', {firebase: fb})
+	</script>
+</body>
+</html>

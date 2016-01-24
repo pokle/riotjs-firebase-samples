@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SF Muni transit table</title>
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.0.0/lodash.min.js"></script>
+
+
+    <script type="riot/tag" src="transit-table.tag"></script>
+    <script type="text/javascript" src="riot+compiler.min.js"></script>
+
+</head>
+<body>
+
+	<transit-table></transit-table>
+
+	<script type="text/javascript">
+	  var fb = new Firebase('https://publicdata-transit.firebaseio.com/sf-muni')	  
+
+
+	  riot.mount('transit-table', {firebase: fb.child('vehicles')})
+	  
+	  // riot.compile(function() {
+	  // 	window.tt = riot.mount('transit-table', {firebase: fb.child('vehicles')})
+	  // })
+	  
+	</script>
+
+</body>
+</html>
